@@ -1,0 +1,22 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.30.5)
+
+project($ENV{PROJECT_NAME} LANGUAGES C CXX)
+
+include_directories(include)
+
+set(SOURCES source/main.cpp)
+set(HEADERS 
+)
+
+add_executable(${PROJECT_NAME} source/main.cpp)
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}
+)
+
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES
+        CXX_STANDARD 23
+        CXX_STANDARD_REQUIRED YES)
+
+TARGET_COMPILE_FEATURES(${PROJECT_NAME}
+        PUBLIC
+        cxx_std_23)

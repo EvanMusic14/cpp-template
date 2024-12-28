@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.6/.schema/devbox.schema.json",
+  "packages": [
+    "gcc14@latest",
+    "cmake@latest",
+    "conan@latest",
+    "gdb@latest"
+  ],
+  "env": {
+    "PROJECT_NAME": "CHANGEME"
+  },
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "build": [
+        "conan install -of build .",
+        "conan build -of build ."
+      ],
+      "start": [
+        "./build/${PROJECT_NAME}"
+      ]
+    }
+  }
+}
